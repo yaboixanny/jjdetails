@@ -424,11 +424,6 @@ h2 {
 
 .review-image {
   margin: 0;
-  border-radius: 22px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow);
-  background: #ffffff;
 }
 
 .review-image img {
@@ -460,6 +455,8 @@ h2 {
 
 .price-card {
   padding: 1.6rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .price-card h3 {
@@ -482,6 +479,21 @@ h2 {
     linear-gradient(180deg, rgba(29, 86, 216, 0.22), rgba(255, 255, 255, 0.08)),
     rgba(255, 255, 255, 0.06);
   border-color: rgba(29, 86, 216, 0.45);
+}
+
+.card-banner {
+  position: absolute;
+  top: 1rem;
+  right: -2.9rem;
+  padding: 0.42rem 3.2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #d9e7ff 100%);
+  color: #12315f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: rotate(35deg);
+  box-shadow: 0 10px 20px rgba(10, 16, 24, 0.16);
 }
 
 .faq-list {
@@ -523,6 +535,25 @@ summary {
   flex-wrap: wrap;
 }
 
+.mobile-sticky-call {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 30;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(120%);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.mobile-sticky-call.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 @media (max-width: 1100px) {
   .hero-grid,
   .faq-layout,
@@ -542,6 +573,10 @@ summary {
 }
 
 @media (max-width: 720px) {
+  body {
+    padding-bottom: 5.5rem;
+  }
+
   .footer-cta,
   .footer-actions {
     flex-direction: column;
@@ -596,5 +631,11 @@ summary {
 
   h1 {
     max-width: none;
+  }
+}
+
+@media (min-width: 721px) {
+  .mobile-sticky-call {
+    display: none;
   }
 }

@@ -119,11 +119,24 @@
               alt="White sports car close-up ceramic coating work at JJ Details in Anaheim"
             />
           </figure>
-          <div class="placeholder-card image-placeholder">Placeholder Image 6</div>
-          <div class="placeholder-card image-placeholder">Placeholder Image 7</div>
-          <div class="placeholder-card image-placeholder">Placeholder Image 8</div>
-          <div class="placeholder-card image-placeholder">Placeholder Image 9</div>
-          <div class="placeholder-card image-placeholder">Placeholder Image 10</div>
+          <figure class="gallery-photo">
+            <img
+              src="ceramic-work-6.webp"
+              alt="Blue Toyota truck ceramic coating work at JJ Details in Anaheim"
+            />
+          </figure>
+          <figure class="gallery-photo">
+            <img
+              src="ceramic-work-7.webp"
+              alt="White Ford Mustang ceramic coating work at JJ Details in Anaheim"
+            />
+          </figure>
+          <figure class="gallery-photo">
+            <img
+              src="ceramic-work-8.webp"
+              alt="White Toyota Land Cruiser ceramic coating work at JJ Details in Anaheim"
+            />
+          </figure>
         </div>
       </section>
 
@@ -177,33 +190,35 @@
           </p>
         </div>
         <div class="container pricing-grid">
-          <article class="price-card">
-            <p class="price-label">Entry Package</p>
+          <article class="price-card featured-price">
+            <span class="card-banner">Most Popular</span>
+            <p class="price-label">10-Year Protection</p>
             <h3>$499 Ceramic Coating</h3>
             <p>
-              A strong starter option for drivers who want added shine and protection at a more
-              accessible price point.
+              Our most requested ceramic coating package for drivers who want longer-term
+              protection, strong gloss, and an easy-maintenance finish.
             </p>
             <ul>
               <li>Exterior prep</li>
               <li>Ceramic coating application</li>
-              <li>Gloss and paint protection boost</li>
+              <li>Lasts up to 10 years</li>
+              <li>About 2 hours to complete</li>
             </ul>
-            <a href="tel:+19497966700" class="button button-full">Call To Book</a>
+            <a href="tel:+19497966700" class="button button-full">Book My Ceramic Coating</a>
           </article>
-          <article class="price-card featured-price">
-            <p class="price-label">Most Popular</p>
-            <h3>$499 Ceramic Coating</h3>
+          <article class="price-card">
+            <p class="price-label">1-Year Protection</p>
+            <h3>$289 Ceramic Coating</h3>
             <p>
-              A higher-tier option for drivers who want more correction, more refinement, and a
-              stronger final presentation.
+              A simpler entry-level ceramic coating option for drivers who want added shine and
+              short-term paint protection at a lower price.
             </p>
             <ul>
-              <li>More in-depth prep work</li>
+              <li>Exterior prep</li>
               <li>Ceramic coating application</li>
-              <li>Better finish refinement before protection</li>
+              <li>Lasts up to 1 year</li>
             </ul>
-            <a href="tel:+19497966700" class="button button-full">Book Premium Package</a>
+            <a href="tel:+19497966700" class="button button-full">Book My Ceramic Coating</a>
           </article>
         </div>
       </section>
@@ -259,10 +274,40 @@
           <h2>Call JJ Details and book your ceramic coating in Anaheim today.</h2>
         </div>
         <div class="footer-actions">
-          <a href="tel:+19497966700" class="button">Call Now</a>
+          <a href="tel:+19497966700" class="button">Book My Ceramic Coating</a>
           <a href="#pricing" class="button button-ghost">See Pricing</a>
         </div>
       </div>
     </footer>
+    <a href="tel:+19497966700" class="button button-call mobile-sticky-call" id="mobile-sticky-call">
+      <span class="button-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <path
+            d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 01.98-.24c1.08.36 2.24.55 3.41.55a1 1 0 011 1V21a1 1 0 01-1 1C10.3 22 2 13.7 2 3a1 1 0 011-1h3.51a1 1 0 011 1c0 1.17.19 2.33.55 3.41a1 1 0 01-.24.98l-2.2 2.4z"
+          ></path>
+        </svg>
+      </span>
+      (949) 796-6700
+    </a>
+    <script>
+      const stickyCallButton = document.getElementById("mobile-sticky-call");
+      const mobileBreakpoint = window.matchMedia("(max-width: 720px)");
+
+      function updateStickyCallVisibility() {
+        if (!stickyCallButton) return;
+
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const threshold = Math.max(scrollableHeight * 0.05, 24);
+        const shouldShow =
+          mobileBreakpoint.matches && scrollableHeight > 0 && window.scrollY >= threshold;
+
+        stickyCallButton.classList.toggle("is-visible", shouldShow);
+      }
+
+      updateStickyCallVisibility();
+      window.addEventListener("scroll", updateStickyCallVisibility, { passive: true });
+      window.addEventListener("resize", updateStickyCallVisibility);
+      mobileBreakpoint.addEventListener("change", updateStickyCallVisibility);
+    </script>
   </body>
 </html>
